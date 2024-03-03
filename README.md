@@ -6,17 +6,18 @@
 
 <https://github.com/nix-community/NixOS-WSL>
 
-## 配置镜像
+## 镜像
+
+在 `/etc/nixos/configuration.nix` 中添加：
+
+```nix
+nix.settings.substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
+```
 
 ```shell
 sudo nix-channel --add https://mirrors.ustc.edu.cn/nix-channels/nixos-23.11 nixos
+sudo nix-channel --update --option substituters "https://mirror.sjtu.edu.cn/nix-channels/store"
 ```
-
-对于 NixOS 22.05 及之后的版本，在 /etc/nixos/configuration.nix 中添加：
-
-nix.settings.substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
-
-`sudo nix-channel --update --option substituters "https://mirror.sjtu.edu.cn/nix-channels/store"`
 
 ## 应用
 
