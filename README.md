@@ -2,6 +2,10 @@
 
 记录 NixOS 配置和使用方法
 
+## 教程
+
+跟着 <https://nixos-and-flakes.thiscute.world/zh/> 一步一步配置。强烈推荐！
+
 ## 安装
 
 <https://github.com/nix-community/NixOS-WSL>
