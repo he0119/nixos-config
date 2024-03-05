@@ -104,6 +104,7 @@
     wget
     curl
     tailscale
+    nixd
   ];
 
   # Tailscale
