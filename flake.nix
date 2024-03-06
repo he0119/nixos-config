@@ -76,6 +76,17 @@
         modules = [
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
+          # 将 home-manager 配置为 nixos 的一个 module
+          # 这样在 nixos-rebuild switch 时，home-manager 配置也会被自动部署
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.uy_sun = import ./home-manager/home.nix;
+
+            # Optionally, use home-manager.extraSpecialArgs to pass
+            # arguments to home.nix
+          }
           vscode-server.nixosModules.default
           {
             services.vscode-server.enable = true;
@@ -84,17 +95,18 @@
       };
     };
 
+    # 不知道这段怎么用
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
-    homeConfigurations = {
-      "uy_sun@nixos" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          # > Our main home-manager configuration file <
-          ./home-manager/home.nix
-        ];
-      };
-    };
+    # homeConfigurations = {
+    #   "uy_sun@nixos" = home-manager.lib.homeManagerConfiguration {
+    #     pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+    #     extraSpecialArgs = {inherit inputs outputs;};
+    #     modules = [
+    #       # > Our main home-manager configuration file <
+    #       ./home-manager/home.nix
+    #     ];
+    #   };
+    # };
   };
 }
