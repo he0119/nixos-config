@@ -1,11 +1,12 @@
 {
   config,
   pkgs,
+  myvars,
   ...
 }: {
   # 注意修改这里的用户名与用户目录
-  home.username = "uy_sun";
-  home.homeDirectory = "/home/uy_sun";
+  home.username = myvars.username;
+  home.homeDirectory = "/home/${myvars.username}";
 
   # 直接将当前文件夹的配置文件，链接到 Home 目录下的指定位置
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
@@ -100,8 +101,8 @@
   # git 相关配置
   programs.git = {
     enable = true;
-    userName = "uy_sun";
-    userEmail = "hmy0119@gmail.com";
+    userName = myvars.username;
+    userEmail = myvars.useremail;
   };
 
   # 启用 starship，这是一个漂亮的 shell 提示符

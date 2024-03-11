@@ -4,6 +4,7 @@
 {
   config,
   pkgs,
+  myvars,
   ...
 }: {
   imports = [
@@ -81,9 +82,9 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.uy_sun = {
+  users.users.${myvars.username} = {
     isNormalUser = true;
-    description = "uy_sun";
+    description = myvars.username;
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       firefox
@@ -135,7 +136,7 @@
   # sudo NOPASSWD
   security.sudo.extraRules = [
     {
-      users = ["uy_sun"];
+      users = [myvars.username];
       commands = [
         {
           command = "ALL";

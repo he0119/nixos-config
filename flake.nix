@@ -46,6 +46,11 @@
     # This is a function that generates an attribute by calling a function you
     # pass to it, with each system as an argument
     forAllSystems = nixpkgs.lib.genAttrs systems;
+
+    myvars = import ./vars;
+
+    # This is the args for all the haumea modules in this folder.
+    args = {inherit inputs myvars;};
   in {
     # Formatter for your nix files, available through 'nix fmt'
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
@@ -70,9 +75,13 @@
 
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
-    nixosConfigurations = {
+    nixosConfigurations = let
+      specialArgs = {inherit inputs myvars;};
+    in {
       nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+        # 将所有 inputs 参数设为所有子模块的特殊参数，
+        # 这样就能直接在子模块中使用 inputs 中的所有依赖项了
+        inherit specialArgs;
         modules = [
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
@@ -82,10 +91,8 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.uy_sun = import ./home-manager/home.nix;
-
-            # Optionally, use home-manager.extraSpecialArgs to pass
-            # arguments to home.nix
+            home-manager.extraSpecialArgs = specialArgs;
+            home-manager.users.${myvars.username} = import ./home-manager/home.nix;
           }
           vscode-server.nixosModules.default
           {
