@@ -85,7 +85,7 @@
   users.users.${myvars.username} = {
     isNormalUser = true;
     description = myvars.username;
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = [];
     packages = with pkgs; [
       firefox
       #  thunderbird

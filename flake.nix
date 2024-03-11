@@ -100,6 +100,24 @@
           }
         ];
       };
+
+      nixos-wsl = nixpkgs.lib.nixosSystem {
+        inherit specialArgs;
+        modules = [
+          ./nixos/wsl.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = specialArgs;
+            home-manager.users.${myvars.username} = import ./home-manager/home.nix;
+          }
+          vscode-server.nixosModules.default
+          {
+            services.vscode-server.enable = true;
+          }
+        ];
+      };
     };
 
     # 不知道这段怎么用

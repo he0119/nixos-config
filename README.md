@@ -21,6 +21,7 @@ nix.settings.substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ]
 ```shell
 sudo nix-channel --add https://mirrors.ustc.edu.cn/nix-channels/nixos-23.11 nixos
 sudo nix-channel --update --option substituters "https://mirror.sjtu.edu.cn/nix-channels/store"
+sudo nixos-rebuild switch --option substituters "https://mirror.sjtu.edu.cn/nix-channels/store"
 ```
 
 ## 应用
