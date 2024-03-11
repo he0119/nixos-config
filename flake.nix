@@ -4,6 +4,7 @@
   inputs = {
     # NixOS 官方软件源，这里使用 nixos-23.11 分支
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixos-wsl.url = "github:nix-community/nixos-wsl";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
@@ -33,6 +34,7 @@
   outputs = {
     self,
     nixpkgs,
+    nixos-wsl,
     home-manager,
     pre-commit-hooks,
     vscode-server,
@@ -105,6 +107,7 @@
         inherit specialArgs;
         modules = [
           ./nixos/wsl.nix
+          nixos-wsl.nixosModules.wsl
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
