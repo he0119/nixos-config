@@ -132,6 +132,19 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
+  # sudo NOPASSWD
+  security.sudo.extraRules = [
+    {
+      users = ["uy_sun"];
+      commands = [
+        {
+          command = "ALL";
+          options = ["NOPASSWD"]; # "SETENV" # Adding the following could be a good idea
+        }
+      ];
+    }
+  ];
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
