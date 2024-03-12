@@ -12,7 +12,6 @@
 } @ args: let
   # 咩咩的 beelink
   name = "miemie";
-  tags = [name "nixos"];
 
   modules = {
     nixos-modules = map mylib.relativeToRoot [

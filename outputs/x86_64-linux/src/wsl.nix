@@ -12,7 +12,6 @@
 } @ args: let
   # WSL
   name = "wsl";
-  tags = [name "nixos"];
 
   modules = {
     nixos-modules =
