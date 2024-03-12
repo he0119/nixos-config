@@ -1,31 +1,31 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
 {
-  config,
-  pkgs,
   myvars,
+  mylib,
   ...
-}: {
-  imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-  ];
+}:
+#############################################################
+#
+#  WSL - a NixOS running on Windows Subsystem for Linux
+#
+#############################################################
+let
+  hostName = "miemie"; # Define your hostname.
+  # hostAddress = myvars.networking.hostAddress.${hostName};
+in {
+  imports = mylib.scanPaths ./.;
 
-  # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
+  networking = {
+    inherit hostName;
 
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+    # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+    # Configure network proxy if necessary
+    # proxy.default = "http://user:password@proxy:port/";
+    # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Enable networking
-  networking.networkmanager.enable = true;
+    # Enable networking
+    networkmanager.enable = true;
+  };
 
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
@@ -80,33 +80,6 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${myvars.username} = {
-    isNormalUser = true;
-    description = myvars.username;
-    extraGroups = [];
-    packages = with pkgs; [
-      firefox
-      #  thunderbird
-    ];
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIRrymJExf8Z+IJ8nf9qvGWAbIAdD/nsR8OoDQ9dH3F8 hmy01@HMY-SPIN5"
-    ];
-  };
-
-  # 启用 Flakes 特性以及配套的船新 nix 命令行工具
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    git
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    curl
-    tailscale
-    nixd
-  ];
 
   # Tailscale
   services.tailscale.enable = true;
