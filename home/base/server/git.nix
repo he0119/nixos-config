@@ -20,7 +20,7 @@
     enable = true;
     lfs.enable = true;
 
-    userName = myvars.userfullname;
+    userName = myvars.username;
     userEmail = myvars.useremail;
 
     extraConfig = {

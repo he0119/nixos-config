@@ -13,7 +13,6 @@
   # WSL
   name = "wsl";
   tags = [name "nixos"];
-  ssh-user = myvars.username;
 
   modules = {
     nixos-modules =
@@ -24,8 +23,8 @@
         "hosts/${name}"
       ])
       ++ [inputs.nixos-wsl.nixosModules.wsl];
-    
-    home-modules.imports = map mylib.relativeToRoot [
+
+    home-module.imports = map mylib.relativeToRoot [
       "home/linux/server.nix"
     ];
   };

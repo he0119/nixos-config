@@ -13,7 +13,6 @@
   # 咩咩的 beelink
   name = "miemie";
   tags = [name "nixos"];
-  ssh-user = myvars.username;
 
   modules = {
     nixos-modules = map mylib.relativeToRoot [

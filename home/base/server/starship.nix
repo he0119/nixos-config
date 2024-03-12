@@ -20,8 +20,6 @@
         format = "on [$symbol$active(\($region\))]($style) ";
         symbol = "🅶 ️";
       };
-
-      palette = "catppuccin_mocha";
     };
   };
 }
