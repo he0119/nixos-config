@@ -24,7 +24,8 @@ git clone https://github.com/he0119/nixos-config.git
 sudo mv /etc/nixos /etc/nixos.bak  # 备份原来的配置
 sudo ln -s ~/nixos-config/ /etc/nixos
 
-sudo nixos-rebuild switch
+# deploy one of the configuration based on the hostname
+sudo nixos-rebuild switch --flake .#wsl
 # 或使用镜像源
-sudo nixos-rebuild switch --option substituters "https://mirror.sjtu.edu.cn/nix-channels/store"
+sudo nixos-rebuild switch --option substituters "https://mirror.sjtu.edu.cn/nix-channels/store" --flake .#wsl
 ```
