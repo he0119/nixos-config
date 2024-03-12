@@ -56,7 +56,7 @@
     # useful in bash/zsh prompt, not in nushell.
     eza = {
       enable = true;
-      enableAliases = false; # do not enable aliases in nushell!
+      enableAliases = true; # do not enable aliases in nushell!
       git = true;
       icons = true;
     };
