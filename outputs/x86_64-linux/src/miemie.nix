@@ -22,6 +22,9 @@
       # host specific
       "hosts/${name}"
     ];
+    home-modules.imports = map mylib.relativeToRoot [
+      "home/linux/server.nix"
+    ];
   };
 
   systemArgs = modules // args;

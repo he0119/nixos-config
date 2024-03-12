@@ -24,6 +24,10 @@
         "hosts/${name}"
       ])
       ++ [inputs.nixos-wsl.nixosModules.wsl];
+    
+    home-modules.imports = map mylib.relativeToRoot [
+      "home/linux/server.nix"
+    ];
   };
 
   systemArgs = modules // args;

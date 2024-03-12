@@ -75,26 +75,6 @@ in {
     }
   );
 
-  # Development Shells
-  devShells = forAllSystems (
-    system: let
-      pkgs = nixpkgs.legacyPackages.${system};
-    in {
-      default = pkgs.mkShell {
-        packages = with pkgs; [
-          # fix https://discourse.nixos.org/t/non-interactive-bash-errors-from-flake-nix-mkshell/33310
-          bashInteractive
-          # fix `cc` replaced by clang, which causes nvim-treesitter compilation error
-          gcc
-        ];
-        name = "dots";
-        shellHook = ''
-          ${self.checks.${system}.pre-commit-check.shellHook}
-        '';
-      };
-    }
-  );
-
   # Format the nix code in this flake
   formatter = forAllSystems (
     # alejandra is a nix formatter with a beautiful output
