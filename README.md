@@ -10,18 +10,9 @@
 
 <https://github.com/nix-community/NixOS-WSL>
 
-## 镜像
-
-在 `/etc/nixos/configuration.nix` 中添加：
-
-```nix
-nix.settings.substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
-```
-
 ```shell
 sudo nix-channel --add https://mirrors.ustc.edu.cn/nix-channels/nixos-23.11 nixos
 sudo nix-channel --update --option substituters "https://mirror.sjtu.edu.cn/nix-channels/store"
-sudo nixos-rebuild switch --option substituters "https://mirror.sjtu.edu.cn/nix-channels/store"
 ```
 
 ## 应用
@@ -32,5 +23,8 @@ sudo nixos-rebuild switch --option substituters "https://mirror.sjtu.edu.cn/nix-
 git clone https://github.com/he0119/nixos-config.git
 sudo mv /etc/nixos /etc/nixos.bak  # 备份原来的配置
 sudo ln -s ~/nixos-config/ /etc/nixos
+
 sudo nixos-rebuild switch
+# 或使用镜像源
+sudo nixos-rebuild switch --option substituters "https://mirror.sjtu.edu.cn/nix-channels/store"
 ```
