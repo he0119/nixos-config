@@ -20,7 +20,7 @@
       # host specific
       "hosts/${name}"
     ];
-    home-modules.imports = map mylib.relativeToRoot [
+    home-module.imports = map mylib.relativeToRoot [
       "home/linux/server.nix"
     ];
   };

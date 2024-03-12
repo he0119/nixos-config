@@ -12,6 +12,8 @@
     (modulesPath + "/profiles/qemu-guest.nix")
   ];
 
+  services.qemuGuest.enable = true;
+
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
