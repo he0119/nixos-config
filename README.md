@@ -29,3 +29,8 @@ sudo nixos-rebuild switch --flake .#mini
 # 或使用镜像源
 sudo nixos-rebuild switch --option substituters "https://mirror.sjtu.edu.cn/nix-channels/store" --flake .#mini
 ```
+
+## 致谢
+
+- [NixOS & Flakes Book](https://nixos-and-flakes.thiscute.world/): 教程
+- [Ryan4Yin's Nix Config](https://github.com/ryan4yin/nix-config): 配置与结构参考
