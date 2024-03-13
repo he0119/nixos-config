@@ -24,8 +24,8 @@ in
     inherit data; # for debugging purposes
 
     # NixOS's unit tests.
-    # unit-tests = haumea.lib.loadEvalTests {
-    #   src = ./tests;
-    #   inputs = args;
-    # };
+    evalTests = haumea.lib.loadEvalTests {
+      src = ./tests;
+      inputs = args // {inherit outputs;};
+    };
   }
