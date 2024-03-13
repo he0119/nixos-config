@@ -17,7 +17,7 @@
     nixos-modules =
       (map mylib.relativeToRoot [
         # common
-        "modules/nixos/server/server.nix"
+        "modules/nixos/wsl.nix"
         # host specific
         "hosts/wsl/${name}"
       ])

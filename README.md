@@ -25,7 +25,7 @@ sudo mv /etc/nixos /etc/nixos.bak  # 备份原来的配置
 sudo ln -s ~/nixos-config/ /etc/nixos
 
 # deploy one of the configuration based on the hostname
-sudo nixos-rebuild switch --flake .#wsl
+sudo nixos-rebuild switch --flake .#mini
 # 或使用镜像源
-sudo nixos-rebuild switch --option substituters "https://mirror.sjtu.edu.cn/nix-channels/store" --flake .#wsl
+sudo nixos-rebuild switch --option substituters "https://mirror.sjtu.edu.cn/nix-channels/store" --flake .#mini
 ```
