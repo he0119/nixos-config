@@ -1,7 +1,6 @@
 {
   pkgs,
   myvars,
-  nuenv,
   ...
 } @ args: {
   environment.systemPackages = with pkgs; [
