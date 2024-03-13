@@ -9,6 +9,7 @@
     lib.attrsets.mapAttrs
     (name: address: {inherit prefixLength address;})
     {
+      "spin5" = "100.107.43.42";
     };
 
   ssh = {
