@@ -23,7 +23,7 @@
       ])
       ++ [inputs.nixos-wsl.nixosModules.wsl];
 
-    home-module.imports = map mylib.relativeToRoot [
+    home-modules = map mylib.relativeToRoot [
       "home/linux/server.nix"
     ];
   };

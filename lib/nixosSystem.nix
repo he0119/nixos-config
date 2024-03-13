@@ -4,7 +4,7 @@
   system,
   genSpecialArgs,
   nixos-modules,
-  home-module ? null,
+  home-modules ? [],
   myvars,
   ...
 }: let
@@ -16,7 +16,7 @@ in
     modules =
       nixos-modules
       ++ (
-        lib.optionals (home-module != null)
+        lib.optionals ((lib.lists.length home-modules) > 0)
         [
           home-manager.nixosModules.home-manager
           {
@@ -24,7 +24,7 @@ in
             home-manager.useUserPackages = true;
 
             home-manager.extraSpecialArgs = specialArgs;
-            home-manager.users."${myvars.username}" = home-module;
+            home-manager.users."${myvars.username}".imports = home-modules;
           }
         ]
       );
