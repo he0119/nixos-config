@@ -11,7 +11,7 @@
   ...
 } @ args: let
   # WSL
-  name = "wsl";
+  name = "mini";
 
   modules = {
     nixos-modules =
@@ -19,7 +19,7 @@
         # common
         "modules/nixos/server/server.nix"
         # host specific
-        "hosts/${name}"
+        "hosts/wsl/${name}"
       ])
       ++ [inputs.nixos-wsl.nixosModules.wsl];
 

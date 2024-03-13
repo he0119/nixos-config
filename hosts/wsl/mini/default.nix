@@ -1,18 +1,13 @@
-{
-  myvars,
-  mylib,
-  ...
-}:
+{mylib, ...}:
 #############################################################
 #
 #  WSL - a NixOS running on Windows Subsystem for Linux
 #
 #############################################################
 let
-  hostName = "wsl"; # Define your hostname.
-  # hostAddress = myvars.networking.hostAddress.${hostName};
+  hostName = "mini"; # Define your hostname.
 in {
-  imports = mylib.scanPaths ./.;
+  imports = (mylib.scanPaths ./.) ++ [../hardware-configuration.nix];
 
   networking = {
     inherit hostName;

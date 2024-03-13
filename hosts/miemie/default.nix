@@ -63,9 +63,6 @@ in {
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Tailscale
-  services.tailscale.enable = true;
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -73,24 +70,6 @@ in {
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
-  # List services that you want to enable:
-
-  # sudo NOPASSWD
-  security.sudo.extraRules = [
-    {
-      users = [myvars.username];
-      commands = [
-        {
-          command = "ALL";
-          options = ["NOPASSWD"]; # "SETENV" # Adding the following could be a good idea
-        }
-      ];
-    }
-  ];
-
-  # Docker
-  virtualisation.docker.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
