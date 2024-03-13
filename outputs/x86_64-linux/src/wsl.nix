@@ -24,6 +24,7 @@
       ++ [inputs.nixos-wsl.nixosModules.wsl];
 
     home-modules = map mylib.relativeToRoot [
+      "hosts/wsl/${name}/home.nix"
       "home/linux/server.nix"
     ];
   };

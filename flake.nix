@@ -43,5 +43,14 @@
       url = "github:nix-community/haumea/v0.2.2";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    ########################  My own repositories  #########################################
+
+    # my private secrets, it's a private repository, you need to replace it with your own.
+    # use ssh protocol to authenticate via ssh-agent/ssh-key, and shallow clone to save time
+    # mysecrets = {
+    #   url = "git+ssh://git@github.com/he0119/nixos-secrets.git?shallow=1";
+    #   flake = false;
+    # };
   };
 }
