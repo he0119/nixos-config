@@ -13,9 +13,6 @@
     rm -f ${config.home.homeDirectory}/.gitconfig
   '';
 
-  home.packages = with pkgs; [
-  ];
-
   programs.git = {
     enable = true;
     lfs.enable = true;

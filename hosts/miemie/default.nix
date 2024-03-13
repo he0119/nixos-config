@@ -27,24 +27,6 @@ in {
     networkmanager.enable = true;
   };
 
-  # Set your time zone.
-  time.timeZone = "Asia/Shanghai";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "zh_CN.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "zh_CN.UTF-8";
-    LC_IDENTIFICATION = "zh_CN.UTF-8";
-    LC_MEASUREMENT = "zh_CN.UTF-8";
-    LC_MONETARY = "zh_CN.UTF-8";
-    LC_NAME = "zh_CN.UTF-8";
-    LC_NUMERIC = "zh_CN.UTF-8";
-    LC_PAPER = "zh_CN.UTF-8";
-    LC_TELEPHONE = "zh_CN.UTF-8";
-    LC_TIME = "zh_CN.UTF-8";
-  };
-
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -84,9 +66,6 @@ in {
   # Tailscale
   services.tailscale.enable = true;
 
-  # 将默认编辑器设置为 vim
-  environment.variables.EDITOR = "vim";
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -96,15 +75,6 @@ in {
   # };
 
   # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # sudo NOPASSWD
   security.sudo.extraRules = [
