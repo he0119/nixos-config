@@ -23,7 +23,7 @@
         "hosts/${name}"
       ]
       ++ [
-        {modules.secrets.server.application.enable = true;}
+        # {modules.secrets.server.application.enable = true;}
       ];
     home-modules = map mylib.relativeToRoot [
       "hosts/${name}/home.nix"
