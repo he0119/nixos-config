@@ -19,6 +19,7 @@
     extraGroups = [
       myvars.username
       "users"
+      "wheel"
       "docker"
     ];
   };
