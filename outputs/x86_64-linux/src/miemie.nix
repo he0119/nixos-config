@@ -14,12 +14,17 @@
   name = "miemie";
 
   modules = {
-    nixos-modules = map mylib.relativeToRoot [
-      # common
-      "modules/nixos/server.nix"
-      # host specific
-      "hosts/${name}"
-    ];
+    nixos-modules =
+      map mylib.relativeToRoot [
+        # common
+        "secrets/nixos.nix"
+        "modules/nixos/server.nix"
+        # host specific
+        "hosts/${name}"
+      ]
+      ++ [
+        {modules.secrets.server.application.enable = true;}
+      ];
     home-modules = map mylib.relativeToRoot [
       "home/linux/server.nix"
     ];

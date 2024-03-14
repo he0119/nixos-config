@@ -1,5 +1,28 @@
 {
   "nodes": {
+    "agenix": {
+      "inputs": {
+        "darwin": "darwin",
+        "home-manager": "home-manager",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1703089996,
+        "narHash": "sha256-ipqShkBmHKC9ft1ZAsA6aeKps32k7+XZSPwfxeHLsAU=",
+        "owner": "ryantm",
+        "repo": "agenix",
+        "rev": "564595d0ad4be7277e07fa63b5a991b3c645655d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ryantm",
+        "repo": "agenix",
+        "rev": "564595d0ad4be7277e07fa63b5a991b3c645655d",
+        "type": "github"
+      }
+    },
     "alejandra": {
       "inputs": {
         "fenix": "fenix",
@@ -20,6 +43,28 @@
         "owner": "kamadorueda",
         "ref": "3.0.0",
         "repo": "alejandra",
+        "type": "github"
+      }
+    },
+    "darwin": {
+      "inputs": {
+        "nixpkgs": [
+          "agenix",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1673295039,
+        "narHash": "sha256-AsdYgE8/GPwcelGgrntlijMg4t3hLFJFCRF3tL5WVjA=",
+        "owner": "lnl7",
+        "repo": "nix-darwin",
+        "rev": "87b9d090ad39b25b2400029c64825fc2a8868943",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lnl7",
+        "ref": "master",
+        "repo": "nix-darwin",
         "type": "github"
       }
     },
@@ -192,6 +237,27 @@
     "home-manager": {
       "inputs": {
         "nixpkgs": [
+          "agenix",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1682203081,
+        "narHash": "sha256-kRL4ejWDhi0zph/FpebFYhzqlOBrk0Pl3dzGEKSAlEw=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "32d3e39c491e2f91152c84f8ad8b003420eab0a1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "home-manager_2": {
+      "inputs": {
+        "nixpkgs": [
           "nixpkgs"
         ]
       },
@@ -208,6 +274,23 @@
         "ref": "release-23.11",
         "repo": "home-manager",
         "type": "github"
+      }
+    },
+    "mysecrets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1710378257,
+        "narHash": "sha256-HTE+86MkJDwIwydKIKmEw2vJntLv3F90dk4ouXj5bnY=",
+        "ref": "refs/heads/main",
+        "rev": "a4faaf2b102978dee4172d165a3d487c07c28472",
+        "shallow": true,
+        "type": "git",
+        "url": "ssh://git@github.com/he0119/nixos-secrets.git"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "ssh://git@github.com/he0119/nixos-secrets.git"
       }
     },
     "nixos-wsl": {
@@ -318,9 +401,11 @@
     },
     "root": {
       "inputs": {
+        "agenix": "agenix",
         "alejandra": "alejandra",
         "haumea": "haumea",
-        "home-manager": "home-manager",
+        "home-manager": "home-manager_2",
+        "mysecrets": "mysecrets",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_2",
         "pre-commit-hooks": "pre-commit-hooks",
