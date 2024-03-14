@@ -17,13 +17,17 @@
     nixos-modules =
       (map mylib.relativeToRoot [
         # common
+        "secrets/nixos.nix"
         "modules/nixos/wsl.nix"
         # host specific
         "hosts/wsl/${name}"
       ])
-      ++ [inputs.nixos-wsl.nixosModules.wsl];
+      ++ [
+        inputs.nixos-wsl.nixosModules.wsl
+      ];
 
     home-modules = map mylib.relativeToRoot [
+      "hosts/wsl/${name}/home.nix"
       "home/linux/server.nix"
     ];
   };

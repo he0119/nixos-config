@@ -7,7 +7,12 @@
 let
   hostName = "mini"; # Define your hostname.
 in {
-  imports = (mylib.scanPaths ./.) ++ [../hardware-configuration.nix];
+  imports = [
+    # Include the results of the hardware scan.
+    ../hardware-configuration.nix
+
+    ./docker.nix
+  ];
 
   networking = {
     inherit hostName;
