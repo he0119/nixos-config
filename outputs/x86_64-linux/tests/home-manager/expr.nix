@@ -4,10 +4,7 @@
   outputs,
 }: let
   username = myvars.username;
-  hosts = [
-    "miemie"
-    "mini"
-  ];
+  hosts = builtins.attrNames outputs.nixosConfigurations;
 in
   lib.genAttrs
   hosts
