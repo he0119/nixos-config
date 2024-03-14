@@ -28,7 +28,7 @@
 
     home-modules = map mylib.relativeToRoot [
       "hosts/wsl/${name}/home.nix"
-      "home/linux/server.nix"
+      "home/linux/core.nix"
     ];
   };
 

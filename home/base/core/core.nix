@@ -43,7 +43,7 @@
     nix-melt # A TUI flake.lock viewer
     # https://github.com/utdemir/nix-tree
     nix-tree # A TUI to visualize the dependency graph of a nix derivation
-    nixd
+    nixd # Nix language server
 
     # productivity
     caddy # A webserver with automatic HTTPS via Let's Encrypt(replacement of nginx)
