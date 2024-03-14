@@ -26,6 +26,7 @@
         {modules.secrets.server.application.enable = true;}
       ];
     home-modules = map mylib.relativeToRoot [
+      "hosts/${name}/home.nix"
       "home/linux/server.nix"
     ];
   };
