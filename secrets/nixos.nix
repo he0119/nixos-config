@@ -94,20 +94,13 @@ in {
 
       (mkIf cfg.server.application.enable {
         # ---------------------------------------------
-        # only root can read this file.
+        # only cloudflared can read this file.
         # ---------------------------------------------
         age.secrets = {
-          "cloudflared" =
-            {
-              file = "${mysecrets}/cloudflared.age";
-            }
-            // high_security;
-        };
-
-        # place secrets in /etc/
-        environment.etc = {
-          "agenix/cloudflared" = {
-            source = config.age.secrets."cloudflared".path;
+          "cloudflared-miemie.json" = {
+            file = "${mysecrets}/cloudflared-miemie.json.age";
+            mode = "0500";
+            owner = "cloudflared";
           };
         };
       })

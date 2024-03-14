@@ -12,7 +12,13 @@ let
   hostName = "miemie"; # Define your hostname.
   # hostAddress = myvars.networking.hostAddress.${hostName};
 in {
-  imports = mylib.scanPaths ./.;
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+
+    ./docker.nix
+    ./cloudflared.nix
+  ];
 
   networking = {
     inherit hostName;
