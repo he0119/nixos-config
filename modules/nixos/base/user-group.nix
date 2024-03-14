@@ -8,7 +8,6 @@
 
   users.groups = {
     "${myvars.username}" = {};
-    docker = {};
   };
 
   users.users."${myvars.username}" = {
