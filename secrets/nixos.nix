@@ -87,20 +87,36 @@ in {
         # place secrets in /etc/
         # environment.etc = {
         #   "agenix/cloudflared" = {
-        #     source = config.age.secrets."cloudflared".path;
+        #     source = config.age.secrets."cloudflared-miemie.json".path;
         #   };
         # };
       })
 
       (mkIf cfg.server.application.enable {
-        # ---------------------------------------------
-        # only cloudflared can read this file.
-        # ---------------------------------------------
         age.secrets = {
-          "cloudflared-miemie.json" = {
-            file = "${mysecrets}/cloudflared-miemie.json.age";
-            mode = "0500";
-            owner = "cloudflared";
+          # ---------------------------------------------
+          # user can read this file.
+          # ---------------------------------------------
+          "wakatime.cfg" =
+            {
+              file = "${mysecrets}/wakatime.cfg.age";
+            }
+            // user_readable;
+
+          # ---------------------------------------------
+          # only cloudflared can read this file.
+          # ---------------------------------------------
+          # "cloudflared-miemie.json" = {
+          #   file = "${mysecrets}/cloudflared/miemie.json.age";
+          #   mode = "0500";
+          #   owner = "cloudflared";
+          # };
+        };
+
+        # place secrets in /etc/
+        environment.etc = {
+          "agenix/.wakatime.cfg" = {
+            source = config.age.secrets."wakatime.cfg".path;
           };
         };
       })
