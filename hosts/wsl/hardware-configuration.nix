@@ -4,8 +4,13 @@
 {
   lib,
   myvars,
+  nixos-wsl,
   ...
 }: {
+  imports = [
+    nixos-wsl.nixosModules.wsl
+  ];
+
   wsl.enable = true;
   wsl.defaultUser = myvars.username;
 

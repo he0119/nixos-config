@@ -23,7 +23,6 @@
         "hosts/wsl/${name}"
       ])
       ++ [
-        inputs.nixos-wsl.nixosModules.wsl
         {modules.secrets.server.application.enable = true;}
       ];
 
