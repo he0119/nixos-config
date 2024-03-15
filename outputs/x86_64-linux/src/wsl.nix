@@ -24,6 +24,7 @@
       ])
       ++ [
         inputs.nixos-wsl.nixosModules.wsl
+        {modules.secrets.server.application.enable = true;}
       ];
 
     home-modules = map mylib.relativeToRoot [
