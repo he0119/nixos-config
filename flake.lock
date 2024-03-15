@@ -281,16 +281,15 @@
       "locked": {
         "lastModified": 1710410149,
         "narHash": "sha256-PoaXp32HAPo2DdjPfd4mWU1tdars3ZFQUPUeeqJYQyw=",
-        "ref": "refs/heads/main",
+        "owner": "he0119",
+        "repo": "nixos-secrets",
         "rev": "ae5574abf04a8bffd4ad90ec7ee1edca577a0f0c",
-        "shallow": true,
-        "type": "git",
-        "url": "ssh://git@github.com/he0119/nixos-secrets.git"
+        "type": "github"
       },
       "original": {
-        "shallow": true,
-        "type": "git",
-        "url": "ssh://git@github.com/he0119/nixos-secrets.git"
+        "owner": "he0119",
+        "repo": "nixos-secrets",
+        "type": "github"
       }
     },
     "nixos-wsl": {
