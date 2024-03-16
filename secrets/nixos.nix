@@ -36,10 +36,12 @@ in {
   };
 
   config =
-    mkIf (
+    mkIf
+    (
       cfg.desktop.enable
       || cfg.server.application.enable
-    ) (mkMerge [
+    )
+    (mkMerge [
       {
         environment.systemPackages = [
           agenix.packages."${pkgs.system}".default
