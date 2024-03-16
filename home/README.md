@@ -1,4 +1,4 @@
-# Home Manager's Submodules
+# Home Manager 子模块
 
-1. `base`: The base module that is suitable for both Linux and macOS.
-2. `linux`: Linux-specific configuration.
+1. `base`: 适用于所有系统的配置。
+1. `linux`: Linux 独有配置。
