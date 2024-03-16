@@ -5,6 +5,7 @@
   specialExpected = {
     "miemie" = "miemie";
     "mini" = "mini";
+    "spin5" = "spin5";
   };
   specialHostNames = builtins.attrNames specialExpected;
 
