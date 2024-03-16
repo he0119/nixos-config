@@ -43,7 +43,6 @@
     nix-melt # A TUI flake.lock viewer
     # https://github.com/utdemir/nix-tree
     nix-tree # A TUI to visualize the dependency graph of a nix derivation
-    nixd # Nix language server
 
     # productivity
     caddy # A webserver with automatic HTTPS via Let's Encrypt(replacement of nginx)
@@ -56,7 +55,6 @@
     # useful in bash/zsh prompt, not in nushell.
     eza = {
       enable = true;
-      enableAliases = true; # do not enable aliases in nushell!
       git = true;
       icons = true;
     };
