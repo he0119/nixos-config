@@ -1,6 +1,5 @@
 {lib, ...}: {
-  home.activation.wakatime = lib.hm.dag.entryAfter ["writeBoundary"] ''
-    cp /etc/agenix/.wakatime.cfg $HOME/.wakatime.cfg
-    chmod 600 $HOME/.wakatime.cfg
+  home.activation.installWakatimeCfg = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    install -Dm 600 /etc/agenix/.wakatime.cfg $HOME/.wakatime.cfg
   '';
 }
