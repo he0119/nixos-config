@@ -23,3 +23,9 @@
     ```shell
     sudo nix-channel --update --option substituters "https://mirror.sjtu.edu.cn/nix-channels/store"
     ```
+
+## 代理
+
+使用 tun 模式的代理工具可以轻松的代理 wsl2 中的系统。
+
+需要注意 <https://www.v2ex.com/t/1000081>，同时开启 tun 模式与 wsl2 镜像网络模式会有冲突。
