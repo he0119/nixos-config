@@ -18,6 +18,7 @@ in {
     ./hardware-configuration.nix
 
     ./xrdp.nix
+    ./ntfs.nix
   ];
 
   networking = {
