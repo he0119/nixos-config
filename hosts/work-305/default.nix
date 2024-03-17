@@ -17,8 +17,7 @@ in {
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
 
-    ./xrdp.nix
-    ./ntfs.nix
+    # ./ntfs.nix
   ];
 
   networking = {
@@ -33,6 +32,19 @@ in {
     # Enable networking
     networkmanager.enable = true;
   };
+
+  # supported file systems, so we can mount any removable disks with these filesystems
+  boot.supportedFilesystems = [
+    "ext4"
+    "btrfs"
+    "xfs"
+    #"zfs"
+    "ntfs"
+    "fat"
+    "vfat"
+    "exfat"
+    "cifs" # mount windows share
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
