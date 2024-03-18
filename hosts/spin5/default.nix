@@ -7,10 +7,7 @@
 let
   hostName = "spin5"; # Define your hostname.
 in {
-  imports = [
-    # Include the results of the hardware scan.
-    ../hardware-configuration.nix
-  ];
+  imports = mylib.scanPaths ./.;
 
   networking = {
     inherit hostName;

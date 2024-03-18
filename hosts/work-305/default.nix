@@ -13,12 +13,7 @@ let
   hostName = "work-305"; # Define your hostname.
   # hostAddress = myvars.networking.hostAddress.${hostName};
 in {
-  imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-
-    # ./ntfs.nix
-  ];
+  imports = mylib.scanPaths ./.;
 
   networking = {
     inherit hostName;
@@ -32,17 +27,6 @@ in {
     # Enable networking
     networkmanager.enable = true;
   };
-
-  # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
-
-  # 禁用休眠
-  systemd.targets.sleep.enable = false;
-  systemd.targets.suspend.enable = false;
-  systemd.targets.hibernate.enable = false;
-  systemd.targets.hybrid-sleep.enable = false;
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
