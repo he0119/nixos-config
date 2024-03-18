@@ -20,14 +20,13 @@
         "secrets/nixos.nix"
         "modules/nixos/wsl.nix"
         # host specific
-        "hosts/wsl/${name}"
+        "hosts/${name}"
       ])
       ++ [
         {modules.secrets.server.application.enable = true;}
       ];
 
     home-modules = map mylib.relativeToRoot [
-      "hosts/wsl/${name}/home.nix"
       "home/linux/core.nix"
     ];
   };
