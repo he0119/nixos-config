@@ -9,6 +9,7 @@
     lib.attrsets.mapAttrs
     (name: address: {inherit prefixLength address;})
     {
+      "mini" = "100.95.121.119";
       "spin5" = "100.107.43.42";
     };
 
@@ -52,7 +53,8 @@
         publicKey = value.publicKey;
       })
       {
-        spin5.publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIRrymJExf8Z+IJ8nf9qvGWAbIAdD/nsR8OoDQ9dH3F8 hmy01@HMY-SPIN5";
+        mini.publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPNl3knUYyOT34FpWozYI+ekXr9tt/mk78ZvCOnYoCWa root@mini";
+        spin5.publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINnksN9nCYFDVlvwfSW0U3yRSkwugxdlQSwyM9H1jV/+ root@spin5";
       };
   };
 }
