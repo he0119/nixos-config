@@ -12,6 +12,8 @@
 } @ args: let
   # WSL
   name = "spin5";
+  tags = ["spin5"];
+  ssh-user = "root";
 
   modules = {
     nixos-modules =
@@ -27,11 +29,14 @@
       ];
 
     home-modules = map mylib.relativeToRoot [
-      "home/linux/core.nix"
+      "home/linux/tui.nix"
     ];
   };
 
   systemArgs = modules // args;
 in {
   nixosConfigurations.${name} = mylib.nixosSystem systemArgs;
+
+  colmena.${name} =
+    mylib.colmenaSystem (systemArgs // {inherit tags ssh-user;});
 }

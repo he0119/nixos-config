@@ -1,5 +1,6 @@
 {lib, ...}: {
   nixosSystem = import ./nixosSystem.nix;
+  colmenaSystem = import ./colmenaSystem.nix;
   attrs = import ./attrs.nix {inherit lib;};
   # use path relative to the root of the project
   relativeToRoot = lib.path.append ../.;

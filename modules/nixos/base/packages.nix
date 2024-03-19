@@ -4,7 +4,6 @@
   environment.systemPackages = with pkgs; [
     neofetch
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    git-trim # git 必备插件
 
     # system call monitoring
     strace # system call monitoring

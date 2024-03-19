@@ -44,7 +44,7 @@
 
   users.users.${myvars.username} = {
     description = myvars.username;
-    # Public Keys that can be used to login to all my PCs, Macbooks, and servers.
+    # 用于登录我所有的个人电脑和服务器的公钥
     #
     # Since its authority is so large, we must strengthen its security:
     # 1. The corresponding private key must be:
@@ -52,12 +52,13 @@
     #      ```bash
     #      # KDF: bcrypt with 256 rounds, takes 2s on Apple M2):
     #      # Passphrase: digits + letters + symbols, 12+ chars
-    #      ssh-keygen -t ed25519 -a 256 -C "ryan@xxx" -f ~/.ssh/xxx`
+    #      ssh-keygen -t ed25519 -a 256 -C "uy_sun@xxx" -f ~/.ssh/xxx`
     #      ```
     #    2. Never leave the device and never sent over the network.
     # 2. Or just use hardware security keys like Yubikey/CanoKey.
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIRrymJExf8Z+IJ8nf9qvGWAbIAdD/nsR8OoDQ9dH3F8 hmy01@HMY-SPIN5"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILb/Iq7A5rHZNcsezdMKVrgJgc8IGEVn9VF0vpqq52zL uy_sun@mini"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGpE0P3OzEMQeIVTrnk0Q8AIUyg/a5FPnWFuyvFWswyu uy_sun@spin5"
     ];
   };
 

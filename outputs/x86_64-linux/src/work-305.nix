@@ -12,6 +12,8 @@
 } @ args: let
   # 305
   name = "work-305";
+  tags = ["work-305"];
+  ssh-user = "root";
 
   modules = {
     nixos-modules =
@@ -26,11 +28,14 @@
         {modules.secrets.server.application.enable = true;}
       ];
     home-modules = map mylib.relativeToRoot [
-      "home/linux/core.nix"
+      "home/linux/tui.nix"
     ];
   };
 
   systemArgs = modules // args;
 in {
   nixosConfigurations.${name} = mylib.nixosSystem systemArgs;
+
+  colmena.${name} =
+    mylib.colmenaSystem (systemArgs // {inherit tags ssh-user;});
 }
