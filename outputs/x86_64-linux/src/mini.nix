@@ -27,7 +27,7 @@
       ];
 
     home-modules = map mylib.relativeToRoot [
-      "home/linux/core.nix"
+      "home/linux/tui.nix"
     ];
   };
 
