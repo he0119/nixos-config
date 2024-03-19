@@ -12,6 +12,8 @@
 } @ args: let
   # WSL
   name = "mini";
+  tags = ["mini"];
+  ssh-user = "root";
 
   modules = {
     nixos-modules =
@@ -34,4 +36,7 @@
   systemArgs = modules // args;
 in {
   nixosConfigurations.${name} = mylib.nixosSystem systemArgs;
+
+  colmena.${name} =
+    mylib.colmenaSystem (systemArgs // {inherit tags ssh-user;});
 }

@@ -12,7 +12,7 @@
 } @ args: let
   # 305
   name = "work-305";
-  tags = ["work" "305"];
+  tags = ["work-305"];
   ssh-user = "root";
 
   modules = {
