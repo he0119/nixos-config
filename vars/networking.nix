@@ -13,6 +13,9 @@
       "spin5" = "100.107.43.42";
 
       "work-305" = "100.83.113.7";
+      "docker-305" = "100.92.25.103";
+
+      "miemie" = "100.77.128.24";
     };
 
   ssh = {
@@ -60,6 +63,9 @@
         spin5.publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINnksN9nCYFDVlvwfSW0U3yRSkwugxdlQSwyM9H1jV/+ root@spin5";
 
         work-305.publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICyHS05r6Oh5pH8W6dMeFDMQtO7/UBf0bYy1Irb9NWiV root@work-305";
+        docker-305.publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMQql4gTBpMl+F4M7cpeaoeTsS1NzrmT+j9pu2yvxJqp root@docker-305";
+
+        miemie.publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOxbqMxP4eKJCeLq9i0zUp1qpeoXTASZ2sLDFpoiOz+m root@miemie";
       };
   };
 }
