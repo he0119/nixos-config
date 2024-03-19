@@ -1,4 +1,4 @@
-# Home Manager's Base Submodules
+# Home Manager 基础子模块
 
-1. `core`: Configuration which is suitable for both servers and desktops.
-1. `home.nix`: Minimal home-manager's config
+1. `core`: 适用于服务器或者桌面的配置.
+1. `home.nix`: 最基础的 home-manager 配置
