@@ -2,7 +2,7 @@
   nixosSystem = import ./nixosSystem.nix;
   colmenaSystem = import ./colmenaSystem.nix;
   attrs = import ./attrs.nix {inherit lib;};
-  # use path relative to the root of the project
+  # 使用相对于项目根目录的路径
   relativeToRoot = lib.path.append ../.;
   scanPaths = path:
     builtins.map
@@ -11,10 +11,10 @@
       (lib.attrsets.filterAttrs
         (
           path: _type:
-            (_type == "directory") # include directories
+            (_type == "directory") # 包括目录
             || (
-              (path != "default.nix") # ignore default.nix
-              && (lib.strings.hasSuffix ".nix" path) # include .nix files
+              (path != "default.nix") # 排除 default.nix
+              && (lib.strings.hasSuffix ".nix" path) # 包含后缀为 .nix 的文件
             )
         )
         (builtins.readDir path)));

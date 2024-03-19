@@ -1,12 +1,12 @@
 # https://github.com/NixOS/nixpkgs/blob/master/lib/attrsets.nix
 {lib, ...}: {
-  # Generate an attribute set from a list.
+  # 从列表生成属性集。
   #
   #   lib.genAttrs [ "foo" "bar" ] (name: "x_" + name)
   #     => { foo = "x_foo"; bar = "x_bar"; }
   listToAttrs = lib.genAttrs;
 
-  # Update only the values of the given attribute set.
+  # 只更新给定属性集的值。
   #
   #   mapAttrs
   #   (name: value: ("bar-" + value))
@@ -14,7 +14,7 @@
   #     => { x = "bar-a"; y = "bar-b"; }
   inherit (lib.attrsets) mapAttrs;
 
-  # Update both the names and values of the given attribute set.
+  # 更新给定属性集的名称和值。
   #
   #   mapAttrs'
   #   (name: value: nameValuePair ("foo_" + name) ("bar-" + value))
@@ -22,15 +22,15 @@
   #     => { foo_x = "bar-a"; foo_y = "bar-b"; }
   inherit (lib.attrsets) mapAttrs';
 
-  # Merge a list of attribute sets into one. smilar to the operator `a // b`, but for a list of attribute sets.
-  # NOTE: the later attribute set overrides the former one!
+  # 将属性集列表合并为一个。类似于操作符 `a // b`，但用于属性集列表。
+  # NOTE: 后面的属性集会覆盖前面的！
   #
   #   mergeAttrsList
   #   [ { x = "a"; y = "b"; } { x = "c"; z = "d"; } { g = "e"; } ]
   #   => { x = "c"; y = "b"; z = "d"; g = "e"; }
   inherit (lib.attrsets) mergeAttrsList;
 
-  # Generate a string from an attribute set.
+  # 从属性集生成字符串。
   #
   #   attrsets.foldlAttrs
   #   (acc: name: value: acc + "\nexport ${name}=${value}")
