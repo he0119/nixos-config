@@ -105,6 +105,11 @@ in {
             }
             // user_readable;
 
+          "gitea/runner-305.env" =
+            {
+              file = "${mysecrets}/gitea/runner-305.env.age";
+            }
+            // user_readable;
           # ---------------------------------------------
           # only cloudflared can read this file.
           # ---------------------------------------------
