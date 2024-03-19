@@ -11,6 +11,8 @@
     {
       "mini" = "100.95.121.119";
       "spin5" = "100.107.43.42";
+
+      "work-305" = "100.83.113.7";
     };
 
   ssh = {
@@ -53,8 +55,11 @@
         publicKey = value.publicKey;
       })
       {
+        # cat /etc/ssh/ssh_host_ed25519_key.pub
         mini.publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPNl3knUYyOT34FpWozYI+ekXr9tt/mk78ZvCOnYoCWa root@mini";
         spin5.publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINnksN9nCYFDVlvwfSW0U3yRSkwugxdlQSwyM9H1jV/+ root@spin5";
+
+        work-305.publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICyHS05r6Oh5pH8W6dMeFDMQtO7/UBf0bYy1Irb9NWiV root@work-305";
       };
   };
 }
