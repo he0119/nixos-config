@@ -279,11 +279,11 @@
     "mysecrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1710824651,
-        "narHash": "sha256-sg0mAOnPTbmAqlHOtagpCfkkUAW6eF4LwLiEnuspO5M=",
+        "lastModified": 1711022076,
+        "narHash": "sha256-kMlzaSB/MtUyvMp3l6c4YnEtdjGOg4pLO/RXK9kCc60=",
         "owner": "he0119",
         "repo": "nixos-secrets",
-        "rev": "64b342662985958e1f72662d9e27e827e9593335",
+        "rev": "48692106e90b1c5d485f61c3e3bac5b066dfda08",
         "type": "github"
       },
       "original": {
