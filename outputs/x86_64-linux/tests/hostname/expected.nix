@@ -7,6 +7,7 @@
     "mini" = "mini";
     "spin5" = "spin5";
     "work-305" = "work-305";
+    "qri" = "qri";
   };
   specialHostNames = builtins.attrNames specialExpected;
 
