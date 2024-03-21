@@ -20,7 +20,7 @@
       map mylib.relativeToRoot [
         # common
         "secrets/nixos.nix"
-        "modules/nixos/pve.nix"
+        "modules/nixos/server.nix"
         # host specific
         "hosts/${name}"
       ]
