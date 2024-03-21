@@ -57,11 +57,17 @@ spin5:
 #
 ############################################################################
 
-miemie:
-  colmena apply --on '@miemie' --verbose --show-trace
+pve:
+  colmena apply --on '@pve' --verbose --show-trace
 
 work-305:
   colmena apply --on '@work-305' --verbose --show-trace
+
+miemie:
+  colmena apply --on '@miemie' --verbose --show-trace
+
+qri:
+  colmena apply --on '@qri' --verbose --show-trace
 
 ############################################################################
 #

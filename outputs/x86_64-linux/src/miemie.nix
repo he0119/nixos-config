@@ -12,7 +12,7 @@
 } @ args: let
   # 咩咩的 beelink
   name = "miemie";
-  tags = ["miemie"];
+  tags = ["miemie" "pve"];
   ssh-user = "root";
 
   modules = {

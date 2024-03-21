@@ -16,6 +16,7 @@
       "docker-305" = "100.92.25.103";
 
       "miemie" = "100.77.128.24";
+      "qir" = "100.71.177.95";
     };
 
   ssh = {
@@ -66,6 +67,7 @@
         docker-305.publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMQql4gTBpMl+F4M7cpeaoeTsS1NzrmT+j9pu2yvxJqp root@docker-305";
 
         miemie.publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOxbqMxP4eKJCeLq9i0zUp1qpeoXTASZ2sLDFpoiOz+m root@miemie";
+        qir.publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIINTuutM4ZNtfc/+qUuAlCYZGDSCK8vmo3MhIsE1bZyx root@qri";
       };
   };
 }
