@@ -61,7 +61,7 @@
     # my private secrets, it's a private repository, you need to replace it with your own.
     # use ssh protocol to authenticate via ssh-agent/ssh-key, and shallow clone to save time
     mysecrets = {
-      url = "github:he0119/nixos-secrets";
+      url = "git+https://git.hehome.xyz/he0119/nixos-secrets.git";
       flake = false;
     };
   };
