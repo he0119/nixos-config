@@ -50,8 +50,8 @@
     croc # File transfer between computers securely and easily
     ncdu # analyzer your disk usage Interactively, via TUI(replacement of `du`)
 
-    # 画图工具
-    gnuplot_qt
+    gnuplot_qt # 画图工具
+    nali # 一个查询IP地理信息和CDN服务提供商的离线终端工具.
   ];
 
   programs = {
