@@ -12,6 +12,7 @@
       ];
       environment = {
         PASSWORD = "123456";
+        CLIP_TEXT = "https://vpn.nsccsz.cn";
       };
     };
   };
