@@ -14,6 +14,10 @@
         PASSWORD = "123456";
         CLIP_TEXT = "https://vpn.nsccsz.cn";
       };
+      extraOptions = [
+        "--device=/dev/net/tun"
+        "--cap-add=NET_ADMIN"
+      ];
     };
   };
 }
