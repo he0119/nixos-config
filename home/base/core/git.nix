@@ -24,6 +24,11 @@
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
       pull.rebase = true;
+      # use oauth only for self-hosted git server
+      "credential \"https://git.hehome.xyz\"".helper = [
+        "cache --timeout 21600" # 6 hours
+        "oauth"
+      ];
     };
 
     # signing = {
