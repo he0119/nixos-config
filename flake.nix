@@ -12,13 +12,13 @@
     # Official NixOS package source, using nixos's unstable branch by default
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
 
     # for wsl
     nixos-wsl.url = "github:nix-community/nixos-wsl";
 
     home-manager = {
-      # url = "github:nix-community/home-manager/release-23.11";
+      # url = "github:nix-community/home-manager/release-24.05";
       url = "github:nix-community/home-manager/master";
 
       # The `follows` keyword in inputs is used for inheritance.
