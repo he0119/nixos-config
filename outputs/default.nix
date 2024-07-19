@@ -23,7 +23,10 @@
       };
       pkgs-stable = import inputs.nixpkgs-stable {
         inherit system;
-        # To use chrome, we need to allow the installation of non-free software
+        config.allowUnfree = true;
+      };
+      pkgs-master = import inputs.nixpkgs-master {
+        inherit system;
         config.allowUnfree = true;
       };
     };

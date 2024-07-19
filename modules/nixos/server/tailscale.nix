@@ -1,6 +1,6 @@
 {
   config,
-  pkgs,
+  pkgs-master,
   ...
 }:
 # =============================================================
@@ -30,7 +30,7 @@
 # =============================================================
 {
   # make the tailscale command usable to users
-  environment.systemPackages = [pkgs.tailscale];
+  environment.systemPackages = [pkgs-master.tailscale];
 
   # enable the tailscale service
   services.tailscale = {
@@ -42,5 +42,6 @@
     # useRoutingFeatures = "server";
     # extraUpFlags = "--advertise-routes 192.168.5.0/24";
     # authKeyFile = "/var/lib/tailscale/authkey";
+    package = pkgs-master.tailscale;
   };
 }
