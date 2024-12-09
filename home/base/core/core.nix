@@ -60,7 +60,7 @@
     eza = {
       enable = true;
       git = true;
-      icons = true;
+      icons = "auto";
     };
 
     # A command-line fuzzy finder
