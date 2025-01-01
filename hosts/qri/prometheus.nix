@@ -19,6 +19,7 @@
   services.prometheus = {
     enable = true;
     port = 9001;
+    enableReload = true;
     globalConfig.scrape_interval = "10s"; # "1m"
     scrapeConfigs = [
       {
