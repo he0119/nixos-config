@@ -29,6 +29,14 @@
           }
         ];
       }
+      {
+        job_name = "suyiiyii-node";
+        static_configs = [
+          {
+            targets = ["suyiiyii.tail6948d.ts.net:9100"];
+          }
+        ];
+      }
     ];
   };
 }
