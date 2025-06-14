@@ -9,10 +9,10 @@
     # There are many ways to reference flake inputs. The most widely used is github:owner/name/reference,
     # which represents the GitHub repository URL + branch/commit-id/tag.
 
-    # Official NixOS package source, using nixos's unstable branch by default
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # Official NixOS package source, using nixos's stable branch by default
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-master.url = "github:nixos/nixpkgs/master";
 
@@ -20,8 +20,8 @@
     nixos-wsl.url = "github:nix-community/nixos-wsl";
 
     home-manager = {
-      # url = "github:nix-community/home-manager/release-24.11";
-      url = "github:nix-community/home-manager/master";
+      url = "github:nix-community/home-manager/release-25.05";
+      # url = "github:nix-community/home-manager/master";
 
       # The `follows` keyword in inputs is used for inheritance.
       # Here, `inputs.nixpkgs` of home-manager is kept consistent with the `inputs.nixpkgs` of the current flake,
