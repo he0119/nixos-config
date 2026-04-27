@@ -1,6 +1,6 @@
 {
   pkgs,
-  pkgs-unstable,
+  pkgs-master,
   ...
 }: {
   #############################################################
@@ -21,6 +21,7 @@
     # It's really useful when you work on a project for a long time.
     git-trim
     git-credential-oauth
+    pkgs-master.opencode
   ];
 
   programs = {
